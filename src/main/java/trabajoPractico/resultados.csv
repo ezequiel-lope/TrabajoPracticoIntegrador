@@ -1,5 +1,19 @@
-Ronda;Equipo1;Cant. Goles 1;Cant. Goles 2;Equipo2
-1;Argentina;1;2;Arabia Saudita
-1;Polonia;0;0;Mexico
-1;Argentina;2;0;Mexico
-1;Arabia Saudita;0;2;Polonia
+Ronda;Equipo1;Cant. Goles 1;Cant. Goles 2;Equipo2;
+1;Argentina;1;2;Arabia Saudita;1
+1;Polonia;0;0;Mexico;2
+1;Argentina;2;0;Mexico;1
+1;Arabia Saudita;0;2;Polonia;3
+1;Polonia;0;2;Argentina;2
+1;Arabia Saudita;1;2;Mexico;3
+2;Catar ;0;2;Ecuador;5
+2;Senegal;0;2;Paises Bajos;7
+2;Catar ;1;3;Senegal;5
+2;Paises Bajos;1;1;Ecuador;8
+2;Ecuador;1;2;Senegal;6
+2;Paises Bajos;2;0;Catar ;8
+3;Suiza;1;0;Camerun;11
+3;Brasil;2;0;Serbia;9
+3;Camerun;3;3;Serbia;12
+3;Brasil;1;0;Suiza;9
+3;Camerun;1;0;Brasil;12
+3;Serbia;2;3;Suiza;10

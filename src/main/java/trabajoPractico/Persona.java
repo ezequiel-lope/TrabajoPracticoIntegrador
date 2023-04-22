@@ -14,9 +14,6 @@ public class Persona {
 
 
 
-
-
-
 	public Persona(String nombre, int puntos) {
 		super();
 		this.nombre = nombre;
@@ -25,42 +22,21 @@ public class Persona {
 	}
 
 
-
-
-
-
 	public String getNombre() {
 		return nombre;
 	}
-
-
-
-
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-
 	public int getPuntos() {
 		return puntos;
 	}
 
-
-
-
-
-
 	public void setPuntos(int puntos) {
 		this.puntos = puntos;
 	}
-
-
-
-
-
 
 	@Override
 	public String toString() {

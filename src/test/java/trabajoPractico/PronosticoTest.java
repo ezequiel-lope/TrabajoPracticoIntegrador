@@ -20,9 +20,9 @@ public class PronosticoTest {
         partido.resultado();
      
         int aciertosEsperados = 1;
-        
-        Pronostico pronostico = new Pronostico(partido,equipo1,ResultadoEnum.GANADOR,persona);
-        int aciertosObtenidos = pronostico.puntos(persona,"juan");
+       
+    Pronostico pronostico = new Pronostico(partido,equipo1,ResultadoEnum.GANADOR,persona);
+       int aciertosObtenidos = pronostico.puntos(persona,"juan");
         
         assertEquals(aciertosEsperados, aciertosObtenidos);
     }

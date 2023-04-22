@@ -99,12 +99,7 @@ private Persona persona;
 	    persona.setPuntos(puntos);
 	    aciertos = aciertos + persona.getPuntos();
 		return aciertos;
-	}
-		
-	
-
-
-
+	}		
 
 	@Override
 	public String toString() {
