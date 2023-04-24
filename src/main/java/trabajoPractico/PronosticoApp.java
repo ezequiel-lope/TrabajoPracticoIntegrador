@@ -13,14 +13,16 @@ public class PronosticoApp {
 
 	public static void main(String[] args) throws SQLException {
 		
-		List<String> configuracion = leerArchivo("src\\main\\java\\trabajoPractico\\configuracion.csv");
-		
-		 Connection conn = getConnection(configuracion);
-		 
-		 ResultSet rs = executeQuery(conn );
-      
 		List<String> archivoPartido = leerArchivo("src\\main\\java\\trabajoPractico\\resultados.csv");
 		List<Partido> partidos = cargarPartidos(archivoPartido);
+		
+		List<String> configuracion = leerArchivo("src\\main\\java\\trabajoPractico\\configuracion.csv");
+		 
+		Connection conn = getConnection(configuracion);
+		 
+		 ResultSet rs = executeQuery(conn );
+      System.out.println(rs);
+		
 		List<Pronostico> pronosticos = cargarPronosticos(rs);
 		List<Ronda> rondas = cargarRondas(partidos);
 		conn.close();
