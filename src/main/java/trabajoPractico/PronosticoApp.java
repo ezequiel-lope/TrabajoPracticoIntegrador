@@ -14,6 +14,7 @@ public class PronosticoApp {
 	public static void main(String[] args) throws SQLException {
 		
 		List<String> configuracion = leerArchivo("src\\main\\java\\trabajoPractico\\configuracion.csv");
+		
 		 Connection conn = getConnection(configuracion);
 		 
 		 ResultSet rs = executeQuery(conn );
@@ -22,6 +23,7 @@ public class PronosticoApp {
 		List<Partido> partidos = cargarPartidos(archivoPartido);
 		List<Pronostico> pronosticos = cargarPronosticos(rs);
 		List<Ronda> rondas = cargarRondas(partidos);
+		conn.close();
 	    List<Pronostico> pronostico1 = pronosticos.subList(0,18);
 	    List<Pronostico> pronostico2 = pronosticos.subList(18,36);
 	    List<Pronostico> pronostico3 = pronosticos.subList(36,54);
@@ -31,10 +33,8 @@ public class PronosticoApp {
 		pronostico.puntos(pronostico2);
 		pronostico.puntos(pronostico3);
 		
-		System.out.println();
-	    conn.close();
 }
-
+  //METODO CARGAR ARCHIVOS
  private static List<String> leerArchivo (String rutaArchivo) {
 	        List<String> lineas = new ArrayList<>();
 	       
@@ -45,7 +45,7 @@ public class PronosticoApp {
 	        return lineas;
 	    }
 	
- 
+  //METODO CARGAR PARTIDOS
  private static List<Partido> cargarPartidos(List<String> lineas) {
 	    lineas.remove(0);
 	    List<Partido> partidos = new ArrayList<>();
@@ -83,7 +83,7 @@ public class PronosticoApp {
 	    return partidos;
 	}
  
- 
+ // METODO CARGAR PRONOSTICOS
  private static List<Pronostico> cargarPronosticos(ResultSet rs) throws SQLException {
      
      List<Pronostico> pronosticos = new ArrayList<>();
