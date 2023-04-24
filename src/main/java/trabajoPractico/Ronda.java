@@ -30,8 +30,8 @@ private	List<Partido> partidos;
 		return partidos;
 	}
 
-	public void setPartidos(List<Partido> partido1) {
-		this.partidos = partido1;
+	public void setPartidos(List<Partido> partido) {
+		this.partidos = partido;
 	}
 	
 	
@@ -47,6 +47,12 @@ private	List<Partido> partidos;
 	    
 	    System.out.println(partido.getEquipo1().getNombre()+ " obtuvo "+puntos+ " puntos en esta ronda");
 	    //return puntos;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Ronda [numeroRonda=" + numeroRonda + ", partidos=" + partidos + "]";
 	}
 	
 	
