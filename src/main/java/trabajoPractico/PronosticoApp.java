@@ -34,6 +34,7 @@ public class PronosticoApp {
 		pronostico.puntos(pronostico3);
 		
 }
+	
   //METODO CARGAR ARCHIVOS
  private static List<String> leerArchivo (String rutaArchivo) {
 	        List<String> lineas = new ArrayList<>();
