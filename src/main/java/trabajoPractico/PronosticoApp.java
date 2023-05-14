@@ -15,22 +15,23 @@ public class PronosticoApp {
 		
 		List<String> archivoPartido = leerArchivo("src\\main\\java\\trabajoPractico\\resultados.csv");
 		List<Partido> partidos = cargarPartidos(archivoPartido);
+		List<String> configuracion = leerArchivo("src\\main\\java\\trabajoPractico\\configuracion.csv"); 
 		
-		List<String> configuracion = leerArchivo("src\\main\\java\\trabajoPractico\\configuracion.csv");
-		 
 		Connection conn = getConnection(configuracion);
 		 
-		 ResultSet rs = executeQuery(conn );
-      System.out.println(rs);
-		
+		ResultSet rs = executeQuery(conn );
+
 		List<Pronostico> pronosticos = cargarPronosticos(rs);
 		List<Ronda> rondas = cargarRondas(partidos);
+		
 		conn.close();
+		
 	    List<Pronostico> pronostico1 = pronosticos.subList(0,18);
 	    List<Pronostico> pronostico2 = pronosticos.subList(18,36);
 	    List<Pronostico> pronostico3 = pronosticos.subList(36,54);
 	    
 	    Pronostico pronostico = new Pronostico();
+	    
 		pronostico.puntos(pronostico1);
 		pronostico.puntos(pronostico2);
 		pronostico.puntos(pronostico3);
@@ -121,7 +122,7 @@ public class PronosticoApp {
      return pronosticos;
  }
  
- // Método estático que establece la conexión con la base de datos
+ // Método que establece la conexión con la base de datos
  private static Connection getConnection(List <String> config) throws SQLException {
 	 config.remove(0);
 Connection conexion = null;
@@ -136,7 +137,7 @@ Connection conexion = null;
  }
 	  
  
- // Método estático que ejecuta una consulta y devuelve un ResultSet
+ // Método  que ejecuta una consulta y devuelve un ResultSet
  private static ResultSet executeQuery(Connection conn) throws SQLException {
      Statement stmt = conn.createStatement();
      return stmt.executeQuery("SELECT p.id, "
@@ -158,7 +159,7 @@ Connection conexion = null;
 		 		+ "ORDER BY p.id;");
  }
  
-
+//metodo para cargar rondas
  private static List<Ronda> cargarRondas(List<Partido> partidos) {
 	    List<Ronda> rondas = new ArrayList<>();
 	    Ronda ronda1 = new Ronda();
